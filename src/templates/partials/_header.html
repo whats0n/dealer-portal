@@ -1,0 +1,13 @@
+<!-- begin header -->
+<header class="header">
+	{% if header.logout %}
+		<button class="header__logout">
+			{{mixins.icon('logout')}}
+			<span>Logout</span>
+		</button>
+	{% endif %}
+	<div class="header__inner">
+		<h2 class="header__title">{{header.title or 'Welcome To Dealer Master Key Portal'}}</h2>
+	</div>
+</header>
+<!-- end header -->

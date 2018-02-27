@@ -1,0 +1,23 @@
+.input
+	padding: 0 15px
+	border: 1px solid $darkGray
+	border-radius: 0
+	width: 100%
+	height: 60px
+	background: $white
+	box-shadow: none
+	+f(16px, 400, normal)
+	appearance: none
+	transition: border-color 0.25s
+	&::-ms-clear 
+		display: none
+	&:focus
+		border-color: $blue
+	&:disabled
+		border-color: lighten($darkGray, 50%)
+		background: lighten($darkGray, 75%)
+		cursor: not-allowed
+	&.is-error
+		border-color: $red
+	&_sm 
+		height: 40px

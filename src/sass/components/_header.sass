@@ -1,0 +1,56 @@
+.header
+	position: relative
+	color: $white
+	background: $blue
+	text-align: center
+	&__inner 
+		padding: 0 40px
+		height: 60px
+		+vertical
+	&__title
+		display: inline-block
+		vertical-align: middle
+		+f(28px, 500, 30px)
+		text-transform: uppercase
+		+md 
+			font-size: 24px
+		+sm 
+			max-width: 200px
+			font-size: 18px
+			line-height: 1.2
+	&__logout
+		position: absolute
+		z-index: 1
+		top: 0
+		right: 0
+		bottom: 0
+		width: 120px
+		color: $white
+		background: none
+		+vertical
+		cursor: pointer
+		transition: background 0.25s, box-shadow 0.25s
+		+md 
+			width: 60px
+		+hover 
+			background: darken($blue, 10%)
+		&:active
+			background: darken($blue, 10%)
+			box-shadow: inset 2px 2px 6px rgba(0,0,0,.2)
+		~ .header__inner
+			padding-left: 120px
+			padding-right: 120px
+			+md 
+				padding-left: 60px
+				padding-right: 60px
+		.icon
+			fill: currentColor
+		.icon,
+		span 
+			display: inline-block
+			vertical-align: middle
+			font-size: 18px
+		span 
+			padding-left: 10px
+			+md 
+				display: none

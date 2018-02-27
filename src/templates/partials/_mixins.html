@@ -1,0 +1,14 @@
+{% macro icon(i, classList) %}
+<svg class="icon icon-{{i}} {{classList}}"><use xlink:href="img/sprite.svg#icon-{{i}}"></use></svg>
+{% endmacro %}
+
+{% macro group(props) %}
+<div class="form-group {{props.classList}}">
+	<label for="{{props.id}}" class="form-group__label">{{props.label}}</label>
+	<div class="form-group__field">
+		{% if props.input %}
+			<input type="{{props.input.type or 'text'}}" class="input form-group__input {{props.input.classList}}" id="{{props.id}}" {{props.input.attrs | safe}}>
+		{% endif %}
+	</div>
+</div>
+{% endmacro %}
