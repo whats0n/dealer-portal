@@ -2,3 +2,5 @@ ProjectTitle: dealer-portal
 
 PageList:
 - file: login.html
+- file: main.html
+- file: properties-per-service.html

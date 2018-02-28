@@ -1,0 +1,53 @@
+[data-scrollbar]
+	position: relative
+	overflow: auto
+	&.ps--active-x,
+	&.ps--active-y
+		overflow: hidden
+		+hover
+			.ps__rail-x,
+			.ps__rail-y
+				opacity: 1
+				visibility: visible
+	&.ps--scrolling-x
+		.ps__rail-x
+			opacity: 1
+			visibility: visible
+	&.ps--scrolling-y
+		.ps__rail-y
+			opacity: 1
+			visibility: visible
+	.ps__rail-x,
+	.ps__rail-y
+		position: absolute
+		opacity: 0
+		visibility: hidden
+		transition: opacity 0.25s, visibility 0.25s
+	.ps__rail-x
+		bottom: 1px
+	.ps__rail-y
+		right: 1px
+	.ps__thumb-x,
+	.ps__thumb-y
+		position: absolute
+		&:before
+			content: ''
+			position: absolute
+			border-radius: 3px
+			background: rgba($black, 0.3)
+	.ps__thumb-x
+		bottom: 0
+		height: 6px
+		&:before
+			top: 0
+			left: 3px
+			right: 3px
+			bottom: 0
+	.ps__thumb-y
+		right: 0
+		width: 6px
+		&:before
+			top: 3px
+			left: 0
+			right: 0
+			bottom: 3px

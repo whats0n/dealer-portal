@@ -1,0 +1,45 @@
+---
+title: Index page
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	{% set header = { logout: true } %}
+	{% include "partials/_header.html" %}
+	<div class="container">
+		<div class="inner">
+			<div class="form form_md form_box">
+				<div class="intro">
+					<h3 class="intro__title">Company Name</h3>
+					<p>for Administrators only</p>
+				</div>
+				{% for item in [
+					{
+						label: 'Manage Your Locations',
+						value: 'Licenses: 154',
+						valueClassList: 'sm-info__default'
+					},
+					{
+						label: 'Setup Metro EDGE',
+						value: '154 out of 154 Stores Setup',
+						valueClassList: 'sm-info__valid'
+					},
+					{
+						label: 'Setup Incomm 5.0',
+						value: '153 out of 154 Stores Setup',
+						valueClassList: 'sm-info__invalid'
+					}
+				] %}
+					<div class="sm-info form__section">
+						<div class="sm-info__label">{{item.label}}</div>
+						<div class="sm-info__value">
+							<a href="#" class="sm-info__link {{item.valueClassList}}">{{item.value}}</a>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

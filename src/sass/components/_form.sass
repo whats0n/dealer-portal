@@ -2,6 +2,8 @@
 	margin: 0 auto
 	&_sm 
 		max-width: 400px
+	&_md
+		max-width: 600px
 	&_box
 		padding: 30px
 		background: $white
@@ -10,5 +12,8 @@
 			padding: 0
 			background: none 
 			box-shadow: none
+	&__section
+		&:not(:last-child)
+			padding-bottom: 20px
 	&__footer
 		padding-top: 10px

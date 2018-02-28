@@ -1,0 +1,57 @@
+---
+title: Index page
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	{% set header = { title: 'Incomm 5.0' } %}
+	{% include "partials/_header.html" %}
+	<div class="container container_simple">
+		<div class="box">
+			<div class="box__header">
+				<label class="switcher">
+					<input type="checkbox">
+					<span class="switcher__label">Status:</span>
+					<span class="switcher__control"></span>
+					<span class="switcher__status">
+						<span data-switcher="enabled">Enabled</span>
+						<span data-switcher="disabled">Disabled</span>
+					</span>
+				</label>
+				<form action="/" class="search box__search">
+					<button class="search__btn" type="submit">
+						{{mixins.icon('search', 'search__icon')}}
+					</button>
+					<input type="text" class="search__input" placeholder="Search">
+				</form>
+			</div>
+			<div class="box__body">
+				<div class="box__table">
+					<div class="box__thead">
+						<div class="box__tr">
+							{% for item in [ 'Store', 'Branch ID', 'User Name', 'Password' ] %}
+								<div class="box__th">{{item}}</div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="box__tbody" data-scrollbar>
+						{% for row in range(0,20) %}
+							{% set index = loop.index %}
+							<div class="box__tr">
+								{% for col in [ 'Store', 'ID', 'Name', 'Password' ] %}
+									<div class="box__td">{{col + ' ' + index}}</div>
+								{% endfor %}
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			<div class="box__footer">
+				<button class="btn btn_green" data-animation="ripple">Save Changes</button>
+				<button class="btn btn_red" data-animation="ripple" data-modal-control="back-to-main">Back to Main</button>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
