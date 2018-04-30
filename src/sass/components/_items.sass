@@ -6,6 +6,12 @@
 		vertical-align: top
 		padding: 10px
 		width: 25%
+		+md 
+			width: 33.33%
+		+sm 
+			width: 50%
+		+xs 
+			width: 100%
 
 $titleSize: 28px
 $titleWeight: 500
@@ -23,7 +29,7 @@ $titleLH: 1
 			display: inline-block
 			vertical-align: middle
 			max-width: 100%
-			max-height: 100%
+			max-height: 60%
 	&__title
 		overflow: hidden
 		height: $titleLH*2 + em
