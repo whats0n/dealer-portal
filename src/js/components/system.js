@@ -1,4 +1,4 @@
-import {OPEN, ACTIVE} from '../constants';
+import {HIDDEN} from '../constants';
 
 $('[data-system-control]').each((i, control) => {
   control = $(control);
@@ -6,7 +6,7 @@ $('[data-system-control]').each((i, control) => {
 
   control.on('click', e => {
     e.preventDefault();
-    control.toggleClass(ACTIVE);
-    content.toggleClass(OPEN);
+    control.toggleClass(HIDDEN);
+    content.toggleClass(HIDDEN);
   });
 });

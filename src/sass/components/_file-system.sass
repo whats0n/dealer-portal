@@ -19,17 +19,31 @@
 					fill: $blue
 				&__arrow
 					border-left-color: $blue
+			&:before
+				background: $blue
 		&[data-system-control]
 			padding-left: 30px
-			&.is-active
+			&.is-hidden
 				.file-system
 					&__folder
 						&_closed
-							display: none
-						&_opened
 							display: block
+						&_opened
+							display: none
 					&__arrow
-						transform: rotate(90deg)
+						transform: rotate(0deg)
+		&_main
+			padding-left: 15px
+			&:before
+				content: ''
+				position: absolute
+				top: 11px
+				left: 0
+				border-radius: 50%
+				width: 6px
+				height: 6px
+				background: $darkGray
+				transition: background 0.25s
 	&__folder,
 	&__arrow
 		position: absolute
@@ -40,16 +54,17 @@
 		fill: $darkGray
 		font-size: 13px
 		transition: fill 0.25s
-		&_opened
+		&_closed
 			display: none
 	&__arrow
 		margin-top: -5px
 		+arr(6, 10, $darkGray, r)
+		transform: rotate(90deg)
 		transition: border-color 0.25s
 	&__content
 		&[data-system-content]
-			display: none
-			&.is-open
-				display: block
+			display: block
+			&.is-hidden
+				display: none
 		.file-system__content
 			padding-left: 20px

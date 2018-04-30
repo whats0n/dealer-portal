@@ -64,7 +64,7 @@ header: {
 						<div class="settings__sidebar">
 							<div class="file-system">
 								<ul class="file-system__content">
-									{% for item in range(0,4) %}
+									{% for item in range(0,1) %}
 										<li class="file-system__item">
 											<a href="#" class="file-system__control" data-system-control>
 												{{mixins.icon('folder-closed', 'file-system__folder file-system__folder_closed')}}
@@ -85,23 +85,9 @@ header: {
 															</a>
 															<ul class="file-system__content" data-system-content>
 																<li class="filte-system__item">
-																	<a href="#" class="file-system__control" data-system-control>
-																		<i class="file-system__arrow"></i>
+																	<a href="#" class="file-system__control file-system__control_main">
 																		<span class="file-system__title">First District</span>
 																	</a>
-																	<ul class="file-system__content" data-system-content>
-																		{% for item in [
-																			'Main Store',
-																			'Southern Store',
-																			'Eastern Store',
-																			'Western Store',
-																			'Northern Store'
-																		] %}
-																			<li class="file-system__item">
-																				<a href="#" class="file-system__control">{{item}}</a>
-																			</li>
-																		{% endfor %}
-																	</ul>
 																</li>
 															</ul>
 														</li>
@@ -149,10 +135,7 @@ header: {
 									] %}
 										<div class="table__tr" data-table-row="{{loop.index}}">
 											<div class="table__td" data-title="Store:">
-												<div class="table__text">{{item.store}}</div>
-												<div class="table__field">
-													<input type="text" class="input input_sm table__input" placeholder="Store Name">
-												</div>
+												<div class="table__text table__text_static">{{item.store}}</div>
 											</div>
 											<div class="table__td" data-title="Branch ID:">
 												<div class="table__text">000{{loop.index}}</div>
