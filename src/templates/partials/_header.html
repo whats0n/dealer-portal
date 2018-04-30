@@ -1,5 +1,24 @@
 <!-- begin header -->
 <header class="header">
+	{# button back #}
+	{% if header.back %}
+		<button class="header__back">
+			{{mixins.icon('arrow-left')}}
+		</button>
+	{% endif %}
+	{# button nav #}
+	{% if header.nav %}
+		<button class="header__btn-nav" data-modal-control="modal-nav">
+			<span></span>
+		</button>
+	{% endif %}
+	{# button help #}
+	{% if header.help %}
+		<button class="header__btn-help">
+			{{mixins.icon('question-option')}}
+		</button>
+	{% endif %}
+	{# button logout #}
 	{% if header.logout %}
 		<button class="header__logout">
 			{{mixins.icon('logout')}}
@@ -7,7 +26,11 @@
 		</button>
 	{% endif %}
 	<div class="header__inner">
-		<h2 class="header__title">{{header.title or 'Welcome To Dealer Master Key Portal'}}</h2>
+		<div class="header__title">{{headerTitle or 'Dealer Portal By'}}</div>
+		{# logo #}
+		{% if header.logo %}
+			<img src="img/{{header.logoSrc or 'b2b-white.svg'}}" alt="{{header.logoAlt or 'B2BSoft'}}" class="header__logo">
+		{% endif %}
 	</div>
 </header>
 <!-- end header -->

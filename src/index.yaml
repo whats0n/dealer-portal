@@ -4,3 +4,6 @@ PageList:
 - file: login.html
 - file: main.html
 - file: properties-per-service.html
+- file: home.html
+- file: settings.html
+- file: vendor-settings.html

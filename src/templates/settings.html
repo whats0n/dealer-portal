@@ -1,0 +1,31 @@
+---
+title: order magic settings
+headerTitle: order magic settings
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="container">
+		<div class="inner inner_wide">
+			<ul class="list">
+				{% for item in [
+					{ title: 'Incomm' },
+					{ title: 'Metro PCS' },
+					{ title: 'Boost' },
+					{ title: 'ePay 1' },
+					{ title: 'ePay 2' },
+					{ title: 'ePay 3' }
+				] %}
+					<li class="list__item">
+						<a href="#" class="list__item-in">
+							{{mixins.icon('settings', 'list__icon')}}
+							<div class="list__title">{{item.title}}</div>
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+	
+{% endblock %}

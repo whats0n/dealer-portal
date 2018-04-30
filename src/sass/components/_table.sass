@@ -1,0 +1,210 @@
+=col($name)
+	&[data-column*="#{$name}"]
+		@content
+
+.table
+	position: relative
+	display: table
+	table-layout: fixed
+	border: 1px solid rgba($darkGray, 0.2)
+	width: 100%
+	background: $white
+	+sm 
+		display: block
+		border: none
+		background: none
+	&__thead
+		display: table-header-group
+		+sm
+			display: none
+		.table__td
+			position: relative
+			padding-top: 10px
+			padding-bottom: 10px
+			background: rgba($darkGray, 0.2)
+			font-size: 16px
+			font-weight: 500
+			line-height: 1.2
+			&[data-sorting]
+				padding-right: 20px
+				cursor: pointer
+				&:before,
+				&:after
+					content: ''
+					position: absolute
+					right: 5px
+					top: 50%
+				&:before
+					+arr(10, 6, $darkGray, t)
+					transform: translate3d(0,-100%,0)
+				&:after
+					+arr(10, 6, $darkGray, b)
+					margin-top: 1px
+			&[data-sorting*="up"]
+				&:before
+					border-bottom-color: $blue
+			&[data-sorting*="down"]
+				&:after
+					border-top-color: $blue
+	&__tbody
+		display: table-row-group
+		+sm 
+			display: block
+			padding-bottom: 70px
+		.table__tr:not(:last-child) 
+			.table__td 
+				border-bottom: 1px solid rgba($darkGray, 0.2)
+				+sm
+					border: none
+		.table__td		
+			&:before
+				content: attr(data-title)
+				display: none
+				padding-bottom: 3px
+				color: lighten($darkGray, 30%)
+				font-size: 16px
+				+sm 
+					display: inline-block
+					vertical-align: middle
+					padding-right: 10px
+	&__tr
+		position: relative
+		display: table-row
+		+sm 
+			display: block
+			padding: 20px 50px 20px 0
+			border-radius: 3px
+			background: rgba($darkGray, 0.05)
+		&.is-active
+			+sm 
+				padding-right: 0
+			.table__field,
+			.table__btns
+				display: block
+			.table__edit,
+			.table__text
+				display: none
+				+sm 
+					display: none
+	&__td 
+		display: table-cell
+		vertical-align: middle
+		padding: 5px 10px
+		+sm 
+			display: block
+			padding: 5px 15px
+		+col('edit')
+			width: 120px
+			+sm 
+				padding: 0
+				width: 100%
+			&:before
+				+sm 
+					display: none
+	&__btns
+		margin: 0 -5px
+		+clr
+		+sm
+			padding-top: 20px
+			margin: 0 auto
+			max-width: 200px
+	&__btns-col
+		float: left
+		padding: 0 5px
+		width: 50%
+	&__btn
+		width: 100%
+		height: 50px
+		background: none
+		font-size: 0
+		transition: background 0.25s, box-shadow 0.25s
+		+hover
+			.icon
+				fill: $blue
+		.icon 
+			display: inline-block
+			vertical-align: middle
+			fill: $darkGray
+			font-size: 20px
+			transition: fill 0.25s
+	&__save,
+	&__cancel
+		+sm 
+			height: 40px
+		&:active
+			+sm 
+				box-shadow: inset 2px 2px 2px rgba($black, 0.2)
+		.icon
+			+sm 
+				fill: $white !important
+	&__save
+		+sm 
+			background: $blue
+		&:active 
+			+sm 
+				background: darken($blue, 5%)
+	&__cancel
+		+sm 
+			background: $red
+		&:active 
+			+sm 
+				background: darken($red, 5%)
+		+hover
+			.icon
+				fill: $red
+	&__edit
+		+sm
+			position: absolute
+			top: 10px
+			right: 0
+			width: 50px
+	&__field,
+	&__btns
+		display: none
+	&__text
+		font-size: 16px
+		line-height: 1.25
+		+sm 
+			display: inline-block
+			vertical-align: middle
+			padding: 10px 0
+	&__input
+		+sm 
+			height: 40px
+	&__nav
+		position: absolute
+		left: 50%
+		bottom: 0
+		margin-left: -110px
+		width: 220px
+		+clr
+	&__prev,
+	&__next
+		border-radius: 3px
+		width: 50px
+		height: 50px
+		background: $blue
+		svg 
+			display: inline-block
+			vertical-align: middle
+			height: 50%
+			fill: $white
+	&__prev
+		float: left
+		padding-right: 3px
+	&__next
+		float: right
+		padding-left: 3px
+	&__caption
+		position: absolute
+		left: 50%
+		bottom: 0
+		display: none
+		padding: 15px 0 
+		margin-left: -60px
+		width: 120px
+		font-size: 20px
+		line-height: 1
+		text-align: center
+		+sm 
+			display: block

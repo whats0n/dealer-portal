@@ -1,0 +1,63 @@
+---
+title: Index page
+header: {
+	logo: true,
+	nav: true,
+	help: true
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="container">
+		<div class="inner">
+			<div class="items">
+				{% for item in [
+					{
+						color: '#034185',
+						img: 'alphacomm',
+						title: 'Alphacomm'
+					},
+					{
+						color: '#cd4157',
+						img: 't-mobile',
+						title: 'T-Mobile'
+					},
+					{
+						color: '#7fba27',
+						img: 'tech-mobile',
+						title: 'Tech Mobile'
+					},
+					{
+						color: '#034185',
+						img: 'alphacomm',
+						title: 'Alphacomm'
+					},
+					{
+						color: '#cd4157',
+						img: 't-mobile',
+						title: 'T-Mobile'
+					},
+					{
+						color: '#7fba27',
+						img: 'tech-mobile',
+						title: 'Tech Mobile'
+					}
+				] %}
+					<div class="items__col">
+						<a href="#" class="item" style="background-color: {{item.color}};">
+							<div class="item__img">
+								<img src="img/{{item.img}}.svg" alt="logo {{item.title}}">
+							</div>
+							<div class="item__title">
+								<span>{{item.title}}</span>
+							</div>
+						</a>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

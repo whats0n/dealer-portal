@@ -1,0 +1,55 @@
+.file-system
+	overflow: auto
+	padding: 15px 0
+	border: 1px solid $darkGray
+	height: 300px
+	background: $white
+	&__control
+		position: relative
+		display: block
+		padding: 5px 10px
+		color: $darkGray
+		font-size: 14px
+		cursor: pointer
+		transition: color 0.25s
+		+hover
+			color: $blue
+			.file-system
+				&__folder
+					fill: $blue
+				&__arrow
+					border-left-color: $blue
+		&[data-system-control]
+			padding-left: 30px
+			&.is-active
+				.file-system
+					&__folder
+						&_closed
+							display: none
+						&_opened
+							display: block
+					&__arrow
+						transform: rotate(90deg)
+	&__folder,
+	&__arrow
+		position: absolute
+		top: 50%
+		left: 10px
+	&__folder
+		margin-top: -0.6em
+		fill: $darkGray
+		font-size: 13px
+		transition: fill 0.25s
+		&_opened
+			display: none
+	&__arrow
+		margin-top: -5px
+		+arr(6, 10, $darkGray, r)
+		transition: border-color 0.25s
+	&__content
+		&[data-system-content]
+			display: none
+			&.is-open
+				display: block
+		.file-system__content
+			padding-left: 20px

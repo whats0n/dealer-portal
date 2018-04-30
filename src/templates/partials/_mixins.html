@@ -9,6 +9,36 @@
 		{% if props.input %}
 			<input type="{{props.input.type or 'text'}}" class="input form-group__input {{props.input.classList}}" id="{{props.id}}" {{props.input.attrs | safe}}>
 		{% endif %}
+		{% if props.select %}
+			{{select(props.select)}}
+		{% endif %}
 	</div>
 </div>
+{% endmacro %}
+
+
+{% macro select(props) %}
+	<div class="select" data-select>
+		<div class="select__header">
+			{{icon('angle-down', 'select__arrow')}}
+			<div class="select__value" data-select-value>{{props.placeholder or props.options[0]}}</div>
+		</div>
+		<div class="select__body" data-select-dropdown>
+			<ul class="select__list">
+				{% for item in props.options %}
+					<li class="select__option {% if not props.placeholder and loop.first %}is-active{% endif %}" data-select-option>{{item}}</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+{% endmacro %}
+
+{% macro checkbox(props) %}
+	<label class="checkbox">
+		<input type="checkbox" class="checkbox__input" {{props.attrs | safe}}>
+		<span class="checkbox__icon">
+			{{icon('check')}}
+		</span>
+		<span class="checkbox__label">{{props.label | safe}}</span>
+	</label>
 {% endmacro %}

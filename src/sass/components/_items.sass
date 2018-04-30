@@ -1,0 +1,34 @@
+.items
+	margin: -10px
+	font-size: 0
+	&__col
+		display: inline-block
+		vertical-align: top
+		padding: 10px
+		width: 25%
+
+$titleSize: 28px
+$titleWeight: 500
+$titleLH: 1
+
+.item
+	display: block
+	padding: 20px 25px
+	color: $white
+	text-align: center
+	&__img
+		height: 100px
+		+vertical
+		img 
+			display: inline-block
+			vertical-align: middle
+			max-width: 100%
+			max-height: 100%
+	&__title
+		overflow: hidden
+		height: $titleLH*2 + em
+		+f($titleSize, $titleWeight, $titleLH*2)
+		span 
+			display: inline-block
+			vertical-align: middle
+			line-height: $titleLH
