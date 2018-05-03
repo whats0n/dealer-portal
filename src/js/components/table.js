@@ -27,7 +27,8 @@ const updateCaption = e => {
   );
   const current = rows
     .filter((i, row) => $(row).closest('.active').length)
-    .data('table-row');
+    .data('table-row') || 1;
+  console.log(current, total);
 
   caption.text(`${current}/${total}`);
 };

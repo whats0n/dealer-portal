@@ -4,3 +4,4 @@ import './modal';
 import './select';
 import './system';
 import './table';
+import './accordion';

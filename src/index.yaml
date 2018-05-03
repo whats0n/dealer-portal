@@ -3,6 +3,7 @@ ProjectTitle: dealer-portal
 PageList:
 - file: login.html
 - file: main.html
+- file: main-v2.0.html
 - file: properties-per-service.html
 - file: home.html
 - file: settings.html
