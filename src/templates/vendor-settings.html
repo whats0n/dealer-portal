@@ -68,7 +68,7 @@ header: {
 							<input type="text" class="search__input" placeholder="Search by Store Name, Region, Disctrict">
 						</form>
 						<div class="settings__main">
-							<div class="settings__sidebar">
+							{#<div class="settings__sidebar">
 								<div class="file-system">
 									<ul class="file-system__content">
 										{% for item in range(0,1) %}
@@ -105,11 +105,12 @@ header: {
 										{% endfor %}
 									</ul>
 								</div>
-							</div>
+							</div>#}
 							<div class="settings__content">
 								<div class="table" data-table>
 									<div class="table__thead">
 										<div class="table__tr">
+											<div class="table__td" data-sorting>Geography</div>
 											<div class="table__td" data-sorting="up">Store</div>
 											<div class="table__td" data-sorting>Branch ID</div>
 											<div class="table__td" data-sorting="down">Username</div>
@@ -141,6 +142,13 @@ header: {
 											}
 										] %}
 											<div class="table__tr" data-table-row="{{loop.index}}">
+												<div class="table__td" data-title="Geography:">
+													<div class="table__text table__text_static">
+														<p>South Division,</p> 
+														<p>South Region,</p> 
+														<p>South District</p>
+													</div>
+												</div>
 												<div class="table__td" data-title="Store:">
 													<div class="table__text table__text_static">{{item.store}}</div>
 												</div>
