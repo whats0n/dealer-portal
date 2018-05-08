@@ -44,8 +44,7 @@
 			&:after
 				bottom: 0				
 	&__btn-help,
-	&__btn-nav,
-	&__back
+	&__btn-nav
 		position: absolute
 		top: 0
 		bottom: 0
@@ -59,18 +58,18 @@
 		&:active
 			background: darken($blue, 10%)
 			box-shadow: inset 2px 2px 6px rgba(0,0,0,.2)
-	&__back
-		left: 0
-		+vertical
-		~ .header__inner
-			padding-left: 60px
-		&:active
-			box-shadow: inset -2px 2px 6px rgba(0,0,0,.2)
-		.icon
-			display: inline-block
-			vertical-align: middle
-			fill: $white
-			font-size: 24px
+	// &__back
+	// 	left: 0
+	// 	+vertical
+	// 	~ .header__inner
+	// 		padding-left: 60px
+	// 	&:active
+	// 		box-shadow: inset -2px 2px 6px rgba(0,0,0,.2)
+	// 	.icon
+	// 		display: inline-block
+	// 		vertical-align: middle
+	// 		fill: $white
+	// 		font-size: 24px
 	&__inner 
 		height: 60px
 		+vertical
