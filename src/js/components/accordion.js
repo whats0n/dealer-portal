@@ -8,6 +8,6 @@ $('.js-accordion').each((i, container) => {
   control.on('click', e => {
     e.preventDefault();
     control.toggleClass(ACTIVE);
-    collapse.slideToggle(500);
+    collapse.stop(true, true, true).slideToggle(500);
   });
 });
