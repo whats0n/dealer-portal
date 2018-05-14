@@ -18,25 +18,22 @@ $titleWeight: 500
 $titleLH: 1
 
 .item
+	position: relative
 	display: block
-	// padding: 20px 25px
 	padding-bottom: 80%
-	color: $white
-	+cover
-	text-align: center
-	&__img
-		height: 100px
-		+vertical
-		img 
+	border: 1px solid rgba($darkGray, 0.2)
+	border-radius: 3px
+	background: $lightGray
+	&__img 
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		padding: 20px
+		+vertical 
+		img
 			display: inline-block
 			vertical-align: middle
 			max-width: 100%
-			max-height: 60%
-	&__title
-		overflow: hidden
-		height: $titleLH*2 + em
-		+f($titleSize, $titleWeight, $titleLH*2)
-		span 
-			display: inline-block
-			vertical-align: middle
-			line-height: $titleLH
+			max-height: 100%
