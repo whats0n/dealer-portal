@@ -8,3 +8,4 @@ PageList:
 - file: home.html
 - file: settings.html
 - file: vendor-settings.html
+- file: error.html
