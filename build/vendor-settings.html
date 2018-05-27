@@ -76,13 +76,13 @@
               <div class="settings__collapse js-accordion-collapse">
                 <div class="settings__box">
                   <div class="settings__item">
-                    <div class="settings__label">Status</div>
+                    <div class="settings__label">Credentials level</div>
                     <div class="settings__value"> <label class="awesome-switcher">
 										<input type="checkbox" checked>
 										<span class="awesome-switcher__content">
-											<span class="awesome-switcher__left">Off</span>
+											<span class="awesome-switcher__left">User</span>
 											<span class="awesome-switcher__control"></span>
-											<span class="awesome-switcher__right">On</span>
+											<span class="awesome-switcher__right">Store</span>
 										</span>
 									</label> </div>
                   </div>
@@ -118,6 +118,10 @@
 		<span class="checkbox__label"></span>
 	</label> </div>
                   </div>
+                  <div class="settings__item">
+                    <div class="settings__label">URL</div>
+                    <div class="settings__value"> <input type="text" class="input input_sm"> </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -137,192 +141,194 @@
                     <div class="table" data-table>
                       <div class="table__thead">
                         <div class="table__tr">
-                          <div class="table__td" data-sorting>Geography</div>
-                          <div class="table__td" data-sorting="up">Store</div>
-                          <div class="table__td" data-sorting>Branch ID</div>
-                          <div class="table__td" data-sorting="down">Username</div>
-                          <div class="table__td">Password</div>
+                          <div class="table__td" data-column="geography" data-sorting>Geography</div>
+                          <div class="table__td" data-column="store" data-sorting="up">Store</div>
+                          <div class="table__td" data-column="url" data-sorting>Navigate URL</div>
+                          <div class="table__td" data-column="username" data-sorting="down">Username</div>
+                          <div class="table__td" data-column="password">Password</div>
                           <div class="table__td" data-column="edit">&nbsp;</div>
                         </div>
                       </div>
-                      <div class="table__tbody" data-table-slider>
-                        <div class="table__tr" data-table-row="1">
-                          <div class="table__td" data-title="Geography:">
-                            <div class="table__text table__text_static">
-                              <p>South Division,</p>
-                              <p>South Region,</p>
-                              <p>South District</p>
+                      <div class="table__tbody" data-scrollbar>
+                        <div class="table__tbody-in" data-table-slider>
+                          <div class="table__tr" data-table-row="1">
+                            <div class="table__td" data-column="geography" data-title="Geography:">
+                              <div class="table__text table__text_static">
+                                <p>South Division,</p>
+                                <p>South Region,</p>
+                                <p>South District</p>
+                              </div>
                             </div>
-                          </div>
-                          <div class="table__td" data-title="Store:">
-                            <div class="table__text table__text_static">Main Store</div>
-                          </div>
-                          <div class="table__td" data-title="Branch ID:">
-                            <div class="table__text">0001</div>
-                            <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="Branch ID"> </div>
-                          </div>
-                          <div class="table__td" data-title="Username:">
-                            <div class="table__text">JDoe</div>
-                            <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="User Name"> </div>
-                          </div>
-                          <div class="table__td" data-title="Password:">
-                            <div class="table__text">Pass1</div>
-                            <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="Password"> </div>
-                          </div>
-                          <div class="table__td" data-column="edit"> <button class="table__btn table__edit" data-table-edit>
+                            <div class="table__td" data-column="store" data-title="Store:">
+                              <div class="table__text table__text_static">Main Store</div>
+                            </div>
+                            <div class="table__td" data-column="url" data-title="Navigate URL:">
+                              <div class="table__text">https://placecage.com/1500/1500</div>
+                              <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="Branch ID"> </div>
+                            </div>
+                            <div class="table__td" data-column="username" data-title="Username:">
+                              <div class="table__text">JDoe</div>
+                              <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="User Name"> </div>
+                            </div>
+                            <div class="table__td" data-column="password" data-title="Password:">
+                              <div class="table__text">Pass1</div>
+                              <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="Password"> </div>
+                            </div>
+                            <div class="table__td" data-column="edit"> <button class="table__btn table__edit" data-table-edit>
 <svg class="icon icon-edit "><use xlink:href="img/sprite.svg#icon-edit"></use></svg>
 </button>
-                            <div class="table__btns">
-                              <div class="table__btns-col"> <button class="table__btn table__save" data-table-edit>
+                              <div class="table__btns">
+                                <div class="table__btns-col"> <button class="table__btn table__save" data-table-edit>
 <svg class="icon icon-check "><use xlink:href="img/sprite.svg#icon-check"></use></svg>
 </button> </div>
-                              <div class="table__btns-col"> <button class="table__btn table__cancel" data-table-edit>
+                                <div class="table__btns-col"> <button class="table__btn table__cancel" data-table-edit>
 <svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
 </button> </div>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="table__tr" data-table-row="2">
-                          <div class="table__td" data-title="Geography:">
-                            <div class="table__text table__text_static">
-                              <p>South Division,</p>
-                              <p>South Region,</p>
-                              <p>South District</p>
+                          <div class="table__tr" data-table-row="2">
+                            <div class="table__td" data-column="geography" data-title="Geography:">
+                              <div class="table__text table__text_static">
+                                <p>South Division,</p>
+                                <p>South Region,</p>
+                                <p>South District</p>
+                              </div>
                             </div>
-                          </div>
-                          <div class="table__td" data-title="Store:">
-                            <div class="table__text table__text_static">Southern Store</div>
-                          </div>
-                          <div class="table__td" data-title="Branch ID:">
-                            <div class="table__text">0002</div>
-                            <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="Branch ID"> </div>
-                          </div>
-                          <div class="table__td" data-title="Username:">
-                            <div class="table__text">DJohnson</div>
-                            <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="User Name"> </div>
-                          </div>
-                          <div class="table__td" data-title="Password:">
-                            <div class="table__text">Pass2</div>
-                            <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="Password"> </div>
-                          </div>
-                          <div class="table__td" data-column="edit"> <button class="table__btn table__edit" data-table-edit>
+                            <div class="table__td" data-column="store" data-title="Store:">
+                              <div class="table__text table__text_static">Southern Store</div>
+                            </div>
+                            <div class="table__td" data-column="url" data-title="Navigate URL:">
+                              <div class="table__text">https://placecage.com/1500/1500</div>
+                              <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="Branch ID"> </div>
+                            </div>
+                            <div class="table__td" data-column="username" data-title="Username:">
+                              <div class="table__text">DJohnson</div>
+                              <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="User Name"> </div>
+                            </div>
+                            <div class="table__td" data-column="password" data-title="Password:">
+                              <div class="table__text">Pass2</div>
+                              <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="Password"> </div>
+                            </div>
+                            <div class="table__td" data-column="edit"> <button class="table__btn table__edit" data-table-edit>
 <svg class="icon icon-edit "><use xlink:href="img/sprite.svg#icon-edit"></use></svg>
 </button>
-                            <div class="table__btns">
-                              <div class="table__btns-col"> <button class="table__btn table__save" data-table-edit>
+                              <div class="table__btns">
+                                <div class="table__btns-col"> <button class="table__btn table__save" data-table-edit>
 <svg class="icon icon-check "><use xlink:href="img/sprite.svg#icon-check"></use></svg>
 </button> </div>
-                              <div class="table__btns-col"> <button class="table__btn table__cancel" data-table-edit>
+                                <div class="table__btns-col"> <button class="table__btn table__cancel" data-table-edit>
 <svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
 </button> </div>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="table__tr" data-table-row="3">
-                          <div class="table__td" data-title="Geography:">
-                            <div class="table__text table__text_static">
-                              <p>South Division,</p>
-                              <p>South Region,</p>
-                              <p>South District</p>
+                          <div class="table__tr" data-table-row="3">
+                            <div class="table__td" data-column="geography" data-title="Geography:">
+                              <div class="table__text table__text_static">
+                                <p>South Division,</p>
+                                <p>South Region,</p>
+                                <p>South District</p>
+                              </div>
                             </div>
-                          </div>
-                          <div class="table__td" data-title="Store:">
-                            <div class="table__text table__text_static">Northern Store</div>
-                          </div>
-                          <div class="table__td" data-title="Branch ID:">
-                            <div class="table__text">0003</div>
-                            <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="Branch ID"> </div>
-                          </div>
-                          <div class="table__td" data-title="Username:">
-                            <div class="table__text">ADickenson</div>
-                            <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="User Name"> </div>
-                          </div>
-                          <div class="table__td" data-title="Password:">
-                            <div class="table__text">Pass3</div>
-                            <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="Password"> </div>
-                          </div>
-                          <div class="table__td" data-column="edit"> <button class="table__btn table__edit" data-table-edit>
+                            <div class="table__td" data-column="store" data-title="Store:">
+                              <div class="table__text table__text_static">Northern Store</div>
+                            </div>
+                            <div class="table__td" data-column="url" data-title="Navigate URL:">
+                              <div class="table__text">https://placecage.com/1500/1500</div>
+                              <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="Branch ID"> </div>
+                            </div>
+                            <div class="table__td" data-column="username" data-title="Username:">
+                              <div class="table__text">ADickenson</div>
+                              <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="User Name"> </div>
+                            </div>
+                            <div class="table__td" data-column="password" data-title="Password:">
+                              <div class="table__text">Pass3</div>
+                              <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="Password"> </div>
+                            </div>
+                            <div class="table__td" data-column="edit"> <button class="table__btn table__edit" data-table-edit>
 <svg class="icon icon-edit "><use xlink:href="img/sprite.svg#icon-edit"></use></svg>
 </button>
-                            <div class="table__btns">
-                              <div class="table__btns-col"> <button class="table__btn table__save" data-table-edit>
+                              <div class="table__btns">
+                                <div class="table__btns-col"> <button class="table__btn table__save" data-table-edit>
 <svg class="icon icon-check "><use xlink:href="img/sprite.svg#icon-check"></use></svg>
 </button> </div>
-                              <div class="table__btns-col"> <button class="table__btn table__cancel" data-table-edit>
+                                <div class="table__btns-col"> <button class="table__btn table__cancel" data-table-edit>
 <svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
 </button> </div>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="table__tr" data-table-row="4">
-                          <div class="table__td" data-title="Geography:">
-                            <div class="table__text table__text_static">
-                              <p>South Division,</p>
-                              <p>South Region,</p>
-                              <p>South District</p>
+                          <div class="table__tr" data-table-row="4">
+                            <div class="table__td" data-column="geography" data-title="Geography:">
+                              <div class="table__text table__text_static">
+                                <p>South Division,</p>
+                                <p>South Region,</p>
+                                <p>South District</p>
+                              </div>
                             </div>
-                          </div>
-                          <div class="table__td" data-title="Store:">
-                            <div class="table__text table__text_static">Eastern Store</div>
-                          </div>
-                          <div class="table__td" data-title="Branch ID:">
-                            <div class="table__text">0004</div>
-                            <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="Branch ID"> </div>
-                          </div>
-                          <div class="table__td" data-title="Username:">
-                            <div class="table__text">JDavidson</div>
-                            <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="User Name"> </div>
-                          </div>
-                          <div class="table__td" data-title="Password:">
-                            <div class="table__text">Pass4</div>
-                            <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="Password"> </div>
-                          </div>
-                          <div class="table__td" data-column="edit"> <button class="table__btn table__edit" data-table-edit>
+                            <div class="table__td" data-column="store" data-title="Store:">
+                              <div class="table__text table__text_static">Eastern Store</div>
+                            </div>
+                            <div class="table__td" data-column="url" data-title="Navigate URL:">
+                              <div class="table__text">https://placecage.com/1500/1500</div>
+                              <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="Branch ID"> </div>
+                            </div>
+                            <div class="table__td" data-column="username" data-title="Username:">
+                              <div class="table__text">JDavidson</div>
+                              <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="User Name"> </div>
+                            </div>
+                            <div class="table__td" data-column="password" data-title="Password:">
+                              <div class="table__text">Pass4</div>
+                              <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="Password"> </div>
+                            </div>
+                            <div class="table__td" data-column="edit"> <button class="table__btn table__edit" data-table-edit>
 <svg class="icon icon-edit "><use xlink:href="img/sprite.svg#icon-edit"></use></svg>
 </button>
-                            <div class="table__btns">
-                              <div class="table__btns-col"> <button class="table__btn table__save" data-table-edit>
+                              <div class="table__btns">
+                                <div class="table__btns-col"> <button class="table__btn table__save" data-table-edit>
 <svg class="icon icon-check "><use xlink:href="img/sprite.svg#icon-check"></use></svg>
 </button> </div>
-                              <div class="table__btns-col"> <button class="table__btn table__cancel" data-table-edit>
+                                <div class="table__btns-col"> <button class="table__btn table__cancel" data-table-edit>
 <svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
 </button> </div>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="table__tr" data-table-row="5">
-                          <div class="table__td" data-title="Geography:">
-                            <div class="table__text table__text_static">
-                              <p>South Division,</p>
-                              <p>South Region,</p>
-                              <p>South District</p>
+                          <div class="table__tr" data-table-row="5">
+                            <div class="table__td" data-column="geography" data-title="Geography:">
+                              <div class="table__text table__text_static">
+                                <p>South Division,</p>
+                                <p>South Region,</p>
+                                <p>South District</p>
+                              </div>
                             </div>
-                          </div>
-                          <div class="table__td" data-title="Store:">
-                            <div class="table__text table__text_static">Western Store</div>
-                          </div>
-                          <div class="table__td" data-title="Branch ID:">
-                            <div class="table__text">0005</div>
-                            <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="Branch ID"> </div>
-                          </div>
-                          <div class="table__td" data-title="Username:">
-                            <div class="table__text">JBrandon</div>
-                            <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="User Name"> </div>
-                          </div>
-                          <div class="table__td" data-title="Password:">
-                            <div class="table__text">Pass5</div>
-                            <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="Password"> </div>
-                          </div>
-                          <div class="table__td" data-column="edit"> <button class="table__btn table__edit" data-table-edit>
+                            <div class="table__td" data-column="store" data-title="Store:">
+                              <div class="table__text table__text_static">Western Store</div>
+                            </div>
+                            <div class="table__td" data-column="url" data-title="Navigate URL:">
+                              <div class="table__text">https://placecage.com/1500/1500</div>
+                              <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="Branch ID"> </div>
+                            </div>
+                            <div class="table__td" data-column="username" data-title="Username:">
+                              <div class="table__text">JBrandon</div>
+                              <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="User Name"> </div>
+                            </div>
+                            <div class="table__td" data-column="password" data-title="Password:">
+                              <div class="table__text">Pass5</div>
+                              <div class="table__field"> <input type="text" class="input input_sm table__input" placeholder="Password"> </div>
+                            </div>
+                            <div class="table__td" data-column="edit"> <button class="table__btn table__edit" data-table-edit>
 <svg class="icon icon-edit "><use xlink:href="img/sprite.svg#icon-edit"></use></svg>
 </button>
-                            <div class="table__btns">
-                              <div class="table__btns-col"> <button class="table__btn table__save" data-table-edit>
+                              <div class="table__btns">
+                                <div class="table__btns-col"> <button class="table__btn table__save" data-table-edit>
 <svg class="icon icon-check "><use xlink:href="img/sprite.svg#icon-check"></use></svg>
 </button> </div>
-                              <div class="table__btns-col"> <button class="table__btn table__cancel" data-table-edit>
+                                <div class="table__btns-col"> <button class="table__btn table__cancel" data-table-edit>
 <svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
 </button> </div>
+                              </div>
                             </div>
                           </div>
                         </div>

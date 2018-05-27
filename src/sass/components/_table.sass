@@ -4,8 +4,6 @@
 
 .table
 	position: relative
-	display: table
-	table-layout: fixed
 	border: 1px solid rgba($darkGray, 0.2)
 	width: 100%
 	background: $white
@@ -14,7 +12,10 @@
 		border: none
 		background: none
 	&__thead
-		display: table-header-group
+		// display: table-header-group
+		display: table
+		table-layout: fixed
+		width: 100%
 		+sm
 			display: none
 		.table__td
@@ -47,10 +48,20 @@
 				&:after
 					border-top-color: $blue
 	&__tbody
-		display: table-row-group
+		// display: table-row-group
+		overflow: auto
+		max-height: 300px
 		+sm 
-			display: block
-			padding-bottom: 70px
+			overflow: visible
+			width: 100%
+			max-height: none
+		&-in
+			display: table
+			table-layout: fixed
+			width: 100%
+			+sm
+				display: block
+				padding-bottom: 70px
 		.table__tr:not(:last-child) 
 			.table__td 
 				border-bottom: 1px solid rgba($darkGray, 0.2)
@@ -94,6 +105,7 @@
 		display: table-cell
 		vertical-align: middle
 		padding: 5px 10px
+		word-break: break-word
 		+sm 
 			display: block
 			padding: 5px 15px
