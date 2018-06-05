@@ -37,6 +37,7 @@ header: {
 								<div class="settings__label">TaxCode</div>
 								<div class="settings__value">
 									{{mixins.select({
+										classList: 'is-error',
 										options: [
 											'Sales Tax',
 											'Option 1',
@@ -46,6 +47,7 @@ header: {
 											'Option 5'
 										]
 									})}}
+									<div class="error-message settings__error-message is-open">Lorem ipsum dolor sit amet.</div>
 								</div>
 							</div>
 							<div class="settings__item">
@@ -57,7 +59,8 @@ header: {
 							<div class="settings__item">
 								<div class="settings__label">URL</div>
 								<div class="settings__value">
-									<input type="text" class="input input_sm">
+									<input type="text" class="input input_sm is-error">
+									<div class="error-message settings__error-message is-open">Lorem ipsum dolor sit amet.</div>
 								</div>
 							</div>
 						</div>

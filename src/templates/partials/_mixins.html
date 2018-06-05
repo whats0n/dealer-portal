@@ -18,7 +18,7 @@
 
 
 {% macro select(props) %}
-	<div class="select" data-select>
+	<div class="select {{props.classList}}" data-select>
 		<div class="select__header">
 			{{icon('angle-down', 'select__arrow')}}
 			<div class="select__value" data-select-value>{{props.placeholder or props.options[0]}}</div>
