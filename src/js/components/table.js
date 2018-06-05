@@ -28,7 +28,6 @@ const updateCaption = e => {
   const current = rows
     .filter((i, row) => $(row).closest('.active').length)
     .data('table-row') || 1;
-  console.log(current, total);
 
   caption.text(`${current}/${total}`);
 };
@@ -49,7 +48,7 @@ const options = {
 
 $(window).on('load resize', () => {
 
-  const mediaWidth = window.matchMedia('(max-width: 768px)').matches;
+  const mediaWidth = window.matchMedia('(max-width: 767px)').matches;
   
   if (mediaWidth && !initialized) {
     initialized = true;
