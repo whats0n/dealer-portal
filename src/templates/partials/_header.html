@@ -29,7 +29,7 @@
 		<div class="header__title">{{headerTitle or 'Dealer Portal By'}}</div>
 		{# logo #}
 		{% if header.logo %}
-			<img src="img/{{header.logoSrc or 'b2b-white.svg'}}" alt="{{header.logoAlt or 'B2BSoft'}}" class="header__logo">
+			<img src="img/{{header.logoSrc or 'b2b-white.svg'}}" alt="{{header.logoAlt or 'B2BSoft'}}" class="header__logo {{header.logoClassList}}">
 		{% endif %}
 	</div>
 </header>
