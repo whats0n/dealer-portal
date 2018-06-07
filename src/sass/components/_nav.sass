@@ -56,11 +56,17 @@
 		cursor: pointer
 		pointer-events: none
 		transition: background 0.25s
+		+boost
+			background: $elevatePrimary
 		+hover 
 			background: darken($blue, 10%)
+		+hover('boost')
+			background: darken($elevatePrimary, 10%)
 		&:active
 			background: darken($blue, 10%)
 			box-shadow: inset 2px 2px 6px rgba(0,0,0,.2)
+			+boost
+				background: darken($elevatePrimary, 10%)
 		strong,
 		.icon
 			display: inline-block

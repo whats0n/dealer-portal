@@ -44,9 +44,14 @@
 			&[data-sorting*="up"]
 				&:before
 					border-bottom-color: $blue
+					+boost
+						border-bottom-color: $elevatePrimary
+
 			&[data-sorting*="down"]
 				&:after
 					border-top-color: $blue
+					+boost
+						border-top-color: $elevatePrimary
 	&__tbody
 		// display: table-row-group
 		overflow: auto
@@ -161,6 +166,12 @@
 		+hover
 			.icon
 				fill: $blue
+		+hover('boost')
+			.icon
+				fill: $elevatePrimary
+		+hover('metro')
+			.icon
+				fill: $metroPrimary
 		.icon 
 			display: inline-block
 			vertical-align: middle
@@ -191,6 +202,12 @@
 		// 	+sm 
 		// 		background: darken($red, 5%)
 		+hover
+			.icon
+				fill: $red
+		+hover('boost')
+			.icon
+				fill: $red
+		+hover('metro')
 			.icon
 				fill: $red
 	&__edit
@@ -233,6 +250,8 @@
 		width: 50px
 		height: 50px
 		background: $blue
+		+boost
+			background: $elevatePrimary
 		svg 
 			display: inline-block
 			vertical-align: middle

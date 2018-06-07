@@ -1,0 +1,212 @@
+<div class="container">
+	<div class="inner inner_lg">
+		<div class="settings">
+			<div class="settings__section js-accordion is-active">
+				<a href="#" class="settings__title js-accordion-control">
+					Company settings {{mixins.icon('angle-down', 'settings__arrow')}}
+				</a>
+				<div class="settings__collapse js-accordion-collapse">
+					<div class="settings__box">
+						<div class="settings__item">
+							<div class="settings__label">Credentials level</div>
+							<div class="settings__value">
+								<label class="awesome-switcher">
+									<input type="checkbox" checked>
+									<span class="awesome-switcher__content">
+										<span class="awesome-switcher__left">User</span>
+										<span class="awesome-switcher__control"></span>
+										<span class="awesome-switcher__right">Store</span>
+									</span>
+								</label>
+							</div>
+							<div class="settings__description">Currently your Company is using User credentials level. Please switch to Store credentials level and set User name and password for each Store</div>
+						</div>
+						<div class="settings__item">
+							<div class="settings__label">TaxCode</div>
+							<div class="settings__value">
+								{{mixins.select({
+									classList: 'is-error',
+									options: [
+										'Sales Tax',
+										'Option 1',
+										'Option 2',
+										'Option 3',
+										'Option 4',
+										'Option 5'
+									]
+								})}}
+								<div class="error-message settings__error-message is-open">Lorem ipsum dolor sit amet.</div>
+							</div>
+						</div>
+						<div class="settings__item">
+							<div class="settings__label">Additional receipt</div>
+							<div class="settings__value">
+								{{mixins.checkbox({ attrs: 'checked' })}}
+							</div>
+						</div>
+						<div class="settings__item">
+							<div class="settings__label">URL</div>
+							<div class="settings__value">
+								<input type="text" class="input input_sm is-error">
+								<div class="error-message settings__error-message is-open">Lorem ipsum dolor sit amet.</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="settings__section js-accordion is-active">
+				<a href="#" class="settings__title js-accordion-control">
+					Store settings {{mixins.icon('angle-down', 'settings__arrow')}}
+				</a>
+				<div class="settings__collapse js-accordion-collapse">
+					<form action="/" class="search settings__search">
+						<button class="search__btn" type="submit">
+							{{mixins.icon('search', 'search__icon')}}
+						</button>
+						<input type="text" class="search__input" placeholder="Search by Store Name, Region, Disctrict">
+					</form>
+					<div class="settings__main">
+						{#<div class="settings__sidebar">
+							<div class="file-system">
+								<ul class="file-system__content">
+									{% for item in range(0,1) %}
+										<li class="file-system__item">
+											<a href="#" class="file-system__control" data-system-control>
+												{{mixins.icon('folder-closed', 'file-system__folder file-system__folder_closed')}}
+												{{mixins.icon('folder-opened', 'file-system__folder file-system__folder_opened')}}
+												<span class="file-system__title">Tracfone Dealer</span>
+											</a>
+											<ul class="file-system__content" data-system-content>
+												<li class="file-system__item">
+													<a href="#" class="file-system__control" data-system-control>
+														<i class="file-system__arrow"></i>
+														<span class="file-system__title">First Division</span>
+													</a>
+													<ul class="file-system__content" data-system-content>
+														<li class="file-system__item">
+															<a href="#" class="file-system__control" data-system-control>
+																<i class="file-system__arrow"></i>
+																<span class="file-system__title">First Region</span>
+															</a>
+															<ul class="file-system__content" data-system-content>
+																<li class="filte-system__item">
+																	<a href="#" class="file-system__control file-system__control_main">
+																		<span class="file-system__title">First District</span>
+																	</a>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									{% endfor %}
+								</ul>
+							</div>
+						</div>#}
+						<div class="settings__content">
+							<div class="table" data-table>
+								<div class="table__thead">
+									<div class="table__tr">
+										<div class="table__td" data-column="geography" data-sorting>Geography</div>
+										<div class="table__td" data-column="store" data-sorting="up">Store</div>
+										<div class="table__td" data-column="url" data-sorting>Navigate URL</div>
+										<div class="table__td" data-column="username" data-sorting="down">Username</div>
+										<div class="table__td" data-column="password">Password</div>
+										<div class="table__td" data-column="edit">&nbsp;</div>
+									</div>
+								</div>
+								<div class="table__tbody" data-scrollbar>
+									<div class="table__tbody-in" data-table-slider>
+										{% for item in [
+											{
+												store: 'Main Store',
+												username: 'JDoe'
+											},
+											{
+												store: 'Southern Store',
+												username: 'DJohnson'
+											},
+											{
+												store: 'Northern Store',
+												username: 'ADickenson'
+											},
+											{
+												store: 'Eastern Store',
+												username: 'JDavidson'
+											},
+											{
+												store: 'Western Store',
+												username: 'JBrandon'
+											}
+										] %}
+											<div class="table__tr" data-table-row="{{loop.index}}">
+												<div class="table__td" data-column="geography" data-title="Geography:">
+													<div class="table__text table__text_static">
+														<p>South Division,
+														South Region,
+														South District</p>
+													</div>
+												</div>
+												<div class="table__td" data-column="store" data-title="Store:">
+													<div class="table__text table__text_static">{{item.store}}</div>
+												</div>
+												<div class="table__td" data-column="url" data-title="Navigate URL:">
+													<div class="table__text">https://placecage.com/1500/1500</div>
+													<div class="table__field">
+														<input type="text" class="input input_sm table__input is-error" placeholder="Branch ID">
+														<div class="error-message table__error-message is-open">URL is invalid</div>
+													</div>
+												</div>
+												<div class="table__td" data-column="username" data-title="Username:">
+													<div class="table__text">{{item.username}}</div>
+													<div class="table__field">
+														<input type="text" class="input input_sm table__input" placeholder="User Name">
+													</div>
+												</div>
+												<div class="table__td" data-column="password" data-title="Password:">
+													<div class="table__text">Pass{{loop.index}}</div>
+													<div class="table__field">
+														<input type="text" class="input input_sm table__input" placeholder="Password">
+													</div>
+												</div>
+												<div class="table__td" data-column="edit">
+													<button class="table__btn table__edit" data-table-edit>{{mixins.icon('edit')}}</button>
+													<div class="table__btns">
+														<div class="table__btns-col">
+															<button class="table__btn table__save" data-table-edit>{{mixins.icon('check')}}</button>
+														</div>
+														<div class="table__btns-col">
+															<button class="table__btn table__cancel" data-table-edit>{{mixins.icon('close')}}</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										{% endfor %}
+									</div>
+								</div>
+								<div class="table__caption" data-table-caption></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="alert">
+				<button class="alert__close">
+					{{mixins.icon('close', 'alert__icon')}}
+				</button>
+				<p>
+					<strong>Success!</strong> Settings are successfully saved.
+				</p>
+			</div>
+			<div class="settings__footer">
+				<div class="settings__btn">
+					<button class="btn btn_primary btn_wide" data-animation="ripple">Done</button>
+				</div>
+				<div class="settings__btn">
+					<button class="btn btn_gray btn_wide" data-animation="ripple">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

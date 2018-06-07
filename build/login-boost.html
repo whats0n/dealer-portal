@@ -3,20 +3,20 @@
 
   <head>
     <meta charset="utf-8">
-    <title>order magic settings</title>
+    <title>Index page</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fff">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" media="all" href="css/app.css"> </head>
 
-  <body>
+  <body class="is-boost">
     <!-- BEGIN content -->
     <div class="out">
       <!-- begin header -->
       <header class="header">
         <div class="header__inner">
-          <div class="header__title">order magic settings</div>
+          <div class="header__title">Dealer Portal By</div>
         </div>
       </header>
       <!-- end header -->
@@ -60,45 +60,19 @@
       </div>
       <!-- end nav -->
       <div class="container">
-        <div class="inner inner_wide">
-          <ul class="list">
-            <li class="list__item"> <a href="#" class="list__item-in">
-						
-<svg class="icon icon-settings list__icon"><use xlink:href="img/sprite.svg#icon-settings"></use></svg>
-
-						<div class="list__title">Incomm</div>
-					</a> </li>
-            <li class="list__item"> <a href="#" class="list__item-in">
-						
-<svg class="icon icon-settings list__icon"><use xlink:href="img/sprite.svg#icon-settings"></use></svg>
-
-						<div class="list__title">Metro PCS</div>
-					</a> </li>
-            <li class="list__item"> <a href="#" class="list__item-in">
-						
-<svg class="icon icon-settings list__icon"><use xlink:href="img/sprite.svg#icon-settings"></use></svg>
-
-						<div class="list__title">Boost</div>
-					</a> </li>
-            <li class="list__item"> <a href="#" class="list__item-in">
-						
-<svg class="icon icon-settings list__icon"><use xlink:href="img/sprite.svg#icon-settings"></use></svg>
-
-						<div class="list__title">ePay 1</div>
-					</a> </li>
-            <li class="list__item"> <a href="#" class="list__item-in">
-						
-<svg class="icon icon-settings list__icon"><use xlink:href="img/sprite.svg#icon-settings"></use></svg>
-
-						<div class="list__title">ePay 2</div>
-					</a> </li>
-            <li class="list__item"> <a href="#" class="list__item-in">
-						
-<svg class="icon icon-settings list__icon"><use xlink:href="img/sprite.svg#icon-settings"></use></svg>
-
-						<div class="list__title">ePay 3</div>
-					</a> </li>
-          </ul>
+        <div class="inner">
+          <form action="/" class="form form_sm form_box">
+            <div class="form-group "> <label for="login-access-code" class="form-group__label">Access Code</label>
+              <div class="form-group__field"> <input type="text" class="input form-group__input " id="login-access-code"> </div>
+            </div>
+            <div class="form-group "> <label for="login-username" class="form-group__label">Username</label>
+              <div class="form-group__field"> <input type="text" class="input form-group__input " id="login-username"> </div>
+            </div>
+            <div class="form-group "> <label for="login-password" class="form-group__label">Password</label>
+              <div class="form-group__field"> <input type="password" class="input form-group__input " id="login-password"> </div>
+            </div>
+            <div class="form__footer"> <button class="btn btn_wide" data-animation="ripple">Login</button> </div>
+          </form>
         </div>
       </div>
     </div>

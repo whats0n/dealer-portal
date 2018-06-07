@@ -5,13 +5,6 @@ title: Error
 
 {% block content %}
 	
-	<div class="description description_light description_sm">
-		<img src="img/w2.svg" alt="w2" class="description__logo">
-		<h3 class="description__title">Something went wrong</h3>
-		<p>Try to login again or feel free to contact us if the problem persists</p>
-		<div class="description__footer">
-			<button class="btn btn_wide">Retry</button>
-		</div>
-	</div>
+	{% include 'partials/_error.html' %}
 	
 {% endblock %}

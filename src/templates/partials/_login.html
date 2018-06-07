@@ -1,0 +1,30 @@
+<div class="container">
+	<div class="inner">
+		<form action="/" class="form form_sm form_box">
+			{% for item in [
+				{
+					label: 'Access Code',
+					id: 'login-access-code',
+					input: true
+				},
+				{
+					label: 'Username',
+					id: 'login-username',
+					input: true
+				},
+				{
+					label: 'Password',
+					id: 'login-password',
+					input: {
+						type: 'password'
+					}
+				}
+			] %}
+				{{mixins.group(item)}}
+			{% endfor %}
+			<div class="form__footer">
+				<button class="btn btn_wide" data-animation="ripple">Login</button>
+			</div>
+		</form>
+	</div>
+</div>

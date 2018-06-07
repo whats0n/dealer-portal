@@ -3,6 +3,8 @@
 	color: $white
 	background: $blue
 	text-align: center
+	+boost
+		background: $elevateSecondary
 	&__btn-help
 		right: 0
 		+vertical
@@ -44,7 +46,8 @@
 			&:after
 				bottom: 0				
 	&__btn-help,
-	&__btn-nav
+	&__btn-nav,
+	&__back
 		position: absolute
 		top: 0
 		bottom: 0
@@ -55,21 +58,25 @@
 		transition: background 0.25s, box-shadow 0.25s
 		+hover 
 			background: darken($blue, 10%)
+		+hover('boost')
+			background: $elevatePrimary
 		&:active
 			background: darken($blue, 10%)
 			box-shadow: inset 2px 2px 6px rgba(0,0,0,.2)
-	// &__back
-	// 	left: 0
-	// 	+vertical
-	// 	~ .header__inner
-	// 		padding-left: 60px
-	// 	&:active
-	// 		box-shadow: inset -2px 2px 6px rgba(0,0,0,.2)
-	// 	.icon
-	// 		display: inline-block
-	// 		vertical-align: middle
-	// 		fill: $white
-	// 		font-size: 24px
+			+boost
+				background: $elevatePrimary
+	&__back
+		left: 0
+		+vertical
+		~ .header__inner
+			padding-left: 60px
+		&:active
+			box-shadow: inset -2px 2px 6px rgba(0,0,0,.2)
+		.icon
+			display: inline-block
+			vertical-align: middle
+			fill: $white
+			font-size: 24px
 	&__inner 
 		height: 60px
 		+vertical
@@ -110,9 +117,13 @@
 			width: 60px
 		+hover 
 			background: darken($blue, 10%)
+		+hover('boost')
+			background: $elevatePrimary
 		&:active
 			background: darken($blue, 10%)
 			box-shadow: inset 2px 2px 6px rgba(0,0,0,.2)
+			+boost
+				background: $elevatePrimary
 		~ .header__inner
 			padding-left: 120px
 			padding-right: 120px

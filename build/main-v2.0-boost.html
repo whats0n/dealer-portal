@@ -3,20 +3,26 @@
 
   <head>
     <meta charset="utf-8">
-    <title>order magic settings</title>
+    <title>Index page</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fff">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" media="all" href="css/app.css"> </head>
 
-  <body>
+  <body class="is-boost">
     <!-- BEGIN content -->
     <div class="out">
       <!-- begin header -->
-      <header class="header">
+      <header class="header"> <button class="header__btn-nav" data-modal-control="modal-nav">
+			<span></span>
+		</button> <button class="header__btn-help">
+			
+<svg class="icon icon-question-option "><use xlink:href="img/sprite.svg#icon-question-option"></use></svg>
+
+		</button>
         <div class="header__inner">
-          <div class="header__title">order magic settings</div>
+          <div class="header__title">Dealer Portal By</div>
         </div>
       </header>
       <!-- end header -->
@@ -60,45 +66,29 @@
       </div>
       <!-- end nav -->
       <div class="container">
-        <div class="inner inner_wide">
-          <ul class="list">
-            <li class="list__item"> <a href="#" class="list__item-in">
-						
-<svg class="icon icon-settings list__icon"><use xlink:href="img/sprite.svg#icon-settings"></use></svg>
-
-						<div class="list__title">Incomm</div>
-					</a> </li>
-            <li class="list__item"> <a href="#" class="list__item-in">
-						
-<svg class="icon icon-settings list__icon"><use xlink:href="img/sprite.svg#icon-settings"></use></svg>
-
-						<div class="list__title">Metro PCS</div>
-					</a> </li>
-            <li class="list__item"> <a href="#" class="list__item-in">
-						
-<svg class="icon icon-settings list__icon"><use xlink:href="img/sprite.svg#icon-settings"></use></svg>
-
-						<div class="list__title">Boost</div>
-					</a> </li>
-            <li class="list__item"> <a href="#" class="list__item-in">
-						
-<svg class="icon icon-settings list__icon"><use xlink:href="img/sprite.svg#icon-settings"></use></svg>
-
-						<div class="list__title">ePay 1</div>
-					</a> </li>
-            <li class="list__item"> <a href="#" class="list__item-in">
-						
-<svg class="icon icon-settings list__icon"><use xlink:href="img/sprite.svg#icon-settings"></use></svg>
-
-						<div class="list__title">ePay 2</div>
-					</a> </li>
-            <li class="list__item"> <a href="#" class="list__item-in">
-						
-<svg class="icon icon-settings list__icon"><use xlink:href="img/sprite.svg#icon-settings"></use></svg>
-
-						<div class="list__title">ePay 3</div>
-					</a> </li>
-          </ul>
+        <div class="inner">
+          <div class="home">
+            <div class="home__title">License</div>
+            <ul class="home__list">
+              <li><a href="#">Create License</a></li>
+              <li><a href="#">Delete License</a></li>
+            </ul>
+          </div>
+          <div class="home">
+            <div class="home__title">Settings</div>
+            <div class="items">
+              <div class="items__col">
+                <a href="#" class="item" data-animation="ripple">
+                  <div class="item__img"> <img src="img/metropcs.svg" alt="metropcs"> </div>
+                </a>
+              </div>
+              <div class="items__col">
+                <a href="#" class="item" data-animation="ripple">
+                  <div class="item__img"> <img src="img/incomm.svg" alt="incomm"> </div>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

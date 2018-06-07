@@ -14,10 +14,14 @@
 	text-decoration: none
 	cursor: pointer
 	transition: opacity .175s, background .175s, box-shadow .175s
+	+boost
+		background: $elevatePrimary
 	&:active
 		color: $white
 		background: darken($blue, 10%)
 		box-shadow: inset 2px 2px 6px rgba(0,0,0,.2)
+		+boost
+			background: darken($elevatePrimary, 10%)
 	&:hover
 		.icon-right
 			transform: translate3d(50%,0,0)
@@ -25,12 +29,20 @@
 			transform: translate3d(-50%,0,0)
 	&_gray
 		background: #bec1cb
+		+boost
+			background: #bec1cb
 		&:active
 			background: darken(#bec1cb, 10%)
+			+boost
+				background: darken(#bec1cb, 10%)
 	&_red
 		background: $red
+		+boost
+			background: $red
 		&:active
 			background: darken($red, 10%)
+			+boost
+				background: darken($red, 10%)
 	&_wide
 		width: 100%
 	.icon-right,

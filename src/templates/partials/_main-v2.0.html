@@ -1,0 +1,25 @@
+<div class="container">
+	<div class="inner">
+		<div class="home">
+			<div class="home__title">License</div>
+			<ul class="home__list">
+				<li><a href="#">Create License</a></li>
+				<li><a href="#">Delete License</a></li>
+			</ul>
+		</div>
+		<div class="home">
+			<div class="home__title">Settings</div>
+			<div class="items">
+				{% for item in [ 'metropcs', 'incomm' ] %}
+					<div class="items__col">
+						<a href="#" class="item" data-animation="ripple">
+							<div class="item__img">
+								<img src="img/{{item}}.svg" alt="{{item}}">
+							</div>
+						</a>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>

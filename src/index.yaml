@@ -2,10 +2,15 @@ ProjectTitle: dealer-portal
 
 PageList:
 - file: login.html
-- file: main.html
 - file: main-v2.0.html
 - file: properties-per-service.html
-- file: home.html
 - file: settings.html
 - file: vendor-settings.html
 - file: error.html
+
+- file: login-boost.html
+- file: main-v2.0-boost.html
+- file: properties-per-service-boost.html
+- file: settings-boost.html
+- file: vendor-settings-boost.html
+- file: error-boost.html
