@@ -1,11 +1,20 @@
 ---
 title: Error
 theme: 'is-boost'
+headerTitle: 'Dealer portal'
+header: { 
+	logo: true, 
+	logoSrc: 'logo-elevate.png', 
+	logoAlt: 'Elevate', 
+	logoClassList: 'header__logo_vendor',
+	logoLeft: true
+}
 ---
 {% extends "layouts/_layout.html" %}
 
 {% block content %}
 	
+	{% set errorIcon = 'not-found' %}
 	{% include 'partials/_error.html' %}
 	
 {% endblock %}

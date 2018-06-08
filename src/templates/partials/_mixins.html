@@ -39,6 +39,8 @@
 		<span class="checkbox__icon">
 			{{icon('check')}}
 		</span>
-		<span class="checkbox__label">{{props.label | safe}}</span>
+		{% if props.label %}
+			<span class="checkbox__label">{{props.label | safe}}</span>
+		{% endif %}
 	</label>
 {% endmacro %}

@@ -26,10 +26,14 @@
 		</button>
 	{% endif %}
 	<div class="header__inner">
-		<div class="header__title">{{headerTitle or 'Dealer Portal By'}}</div>
 		{# logo #}
-		{% if header.logo %}
-			<img src="img/{{header.logoSrc or 'b2b-white.svg'}}" alt="{{header.logoAlt or 'B2BSoft'}}" class="header__logo {{header.logoClassList}}">
+		{% if header.logo and header.logoLeft %}
+			<img src="img/{{header.logoSrc or 'b2b-white.svg'}}" alt="{{header.logoAlt or 'B2BSoft'}}" class="header__logo header__logo_left {{header.logoClassList}}">
+		{% endif %}
+		<div class="header__title">{{headerTitle or 'Dealer Portal by'}}</div>
+		{# logo #}
+		{% if header.logo and header.logoRight %}
+			<img src="img/{{header.logoSrc or 'b2b-white.svg'}}" alt="{{header.logoAlt or 'B2BSoft'}}" class="header__logo header__logo_right {{header.logoClassList}}">
 		{% endif %}
 	</div>
 </header>
