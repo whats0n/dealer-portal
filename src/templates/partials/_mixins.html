@@ -34,7 +34,7 @@
 {% endmacro %}
 
 {% macro checkbox(props) %}
-	<label class="checkbox">
+	<label class="checkbox {{props.classList}}">
 		<input type="checkbox" class="checkbox__input" {{props.attrs | safe}}>
 		<span class="checkbox__icon">
 			{{icon('check')}}

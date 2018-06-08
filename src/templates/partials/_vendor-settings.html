@@ -175,8 +175,8 @@
 														<input type="text" class="input input_sm table__input" placeholder="Password">
 													</div>
 												</div>
-												<div class="table__td" data-column="url">
-													{{mixins.checkbox()}}
+												<div class="table__td" data-column="url" data-title="Qpay payment:">
+													{{mixins.checkbox({ classList: 'table__checkbox' })}}
 												</div>
 												<div class="table__td" data-column="edit">
 													<button class="table__btn table__edit" data-table-edit>{{mixins.icon('edit')}}</button>
