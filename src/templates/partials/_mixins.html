@@ -34,13 +34,18 @@
 {% endmacro %}
 
 {% macro checkbox(props) %}
-	<label class="checkbox {{props.classList}}">
+	<label class="checkbox {{props.classList}} {% if props.tooltip %}tooltip-wrapper{% endif %}">
 		<input type="checkbox" class="checkbox__input" {{props.attrs | safe}}>
 		<span class="checkbox__icon">
 			{{icon('check')}}
 		</span>
 		{% if props.label %}
 			<span class="checkbox__label">{{props.label | safe}}</span>
+		{% endif %}
+		{% if props.tooltip %}
+			<span class="tooltip checkbox__tooltip">
+				<span class="tooltip__content">{{props.tooltip}}</span>
+			</span>
 		{% endif %}
 	</label>
 {% endmacro %}
