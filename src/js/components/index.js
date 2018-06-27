@@ -5,3 +5,4 @@ import './select';
 import './system';
 import './table';
 import './accordion';
+import './toggle-password';

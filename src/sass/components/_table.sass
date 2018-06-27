@@ -26,6 +26,8 @@
 			font-size: 16px
 			font-weight: 500
 			line-height: 1.2
+			+md 
+				font-size: 14px
 			&[data-sorting]
 				padding-right: 20px
 				cursor: pointer
@@ -123,15 +125,15 @@
 				+sm 
 					display: none
 		+col('password')
-			width: 130px
+			width: 150px
 			+md 
-				width: auto
+				width: 20%
 			+sm 
 				width: 100%
 		+col('user')
 			width: 140px
 			+md 
-				width: auto
+				width: 18%
 			+sm 
 				width: 100%
 		+col('store')
@@ -230,13 +232,19 @@
 	&__text
 		font-size: 16px
 		line-height: 1.25
+		+md 
+			font-size: 14px
 		+sm 
 			display: inline-block
 			vertical-align: middle
 			padding: 10px 0
+			font-size: 16px
 	&__input
+		+md 
+			font-size: 14px
 		+sm 
 			height: 40px
+			font-size: 16px
 	&__nav
 		position: absolute
 		left: 50%
@@ -279,3 +287,9 @@
 	&__checkbox
 		+sm
 			vertical-align: middle
+	&__toggle-password
+		position: absolute
+		top: 20px
+		right: 0
+		+ .table__input
+			padding-right: 40px

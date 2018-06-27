@@ -172,8 +172,12 @@
 												</div>
 												<div class="table__td" data-column="password" data-title="Password:">
 													<div class="table__text">Pass{{loop.index}}</div>
-													<div class="table__field">
-														<input type="text" class="input input_sm table__input" placeholder="Password">
+													<div class="table__field js-toggle-password">
+														<button class="btn-toggle table__toggle-password js-toggle-password-control">
+															{{mixins.icon('eye-open', 'btn-toggle__visible')}}
+															{{mixins.icon('eye-close', 'btn-toggle__hidden')}}
+														</button>
+														<input type="password" class="input input_sm table__input js-toggle-password-input" placeholder="Password">
 													</div>
 												</div>
 												<div class="table__td" data-column="url" data-title="Qpay payment:">
