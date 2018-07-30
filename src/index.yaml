@@ -8,3 +8,7 @@ PageList:
 - file: main-v2.0-boost.html
 - file: vendor-settings-boost.html
 - file: error-boost.html
+
+- file: main-v2.0-metro.html
+- file: vendor-settings-metro.html
+- file: error-metro.html

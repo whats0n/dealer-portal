@@ -5,6 +5,8 @@
 	text-align: center
 	+boost
 		background: $elevateSecondary
+	+metro
+		background: $metroPrimary
 	&__btn-help
 		right: 0
 		+vertical
@@ -60,11 +62,15 @@
 			background: darken($blue, 10%)
 		+hover('boost')
 			background: $elevatePrimary
+		+hover('metro')
+			background: $metroPrimary
 		&:active
 			background: darken($blue, 10%)
 			box-shadow: inset 2px 2px 6px rgba(0,0,0,.2)
 			+boost
 				background: $elevatePrimary
+			+metro
+				background: $metroPrimary
 	&__back
 		left: 0
 		+vertical
@@ -120,11 +126,15 @@
 			background: darken($blue, 10%)
 		+hover('boost')
 			background: $elevatePrimary
+		+hover('metro')
+			background: $metroPrimary
 		&:active
 			background: darken($blue, 10%)
 			box-shadow: inset 2px 2px 6px rgba(0,0,0,.2)
 			+boost
 				background: $elevatePrimary
+			+metro
+				background: $metroPrimary
 		~ .header__inner
 			padding-left: 120px
 			padding-right: 120px
