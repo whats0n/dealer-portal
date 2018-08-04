@@ -6,3 +6,4 @@ import './system';
 import './table';
 import './accordion';
 import './toggle-password';
+import './dropdown';

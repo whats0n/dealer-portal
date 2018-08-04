@@ -1,0 +1,174 @@
+<div class="container">
+	<div class="inner inner_lg">
+		<div class="settings">
+			<div class="settings__section js-accordion is-active">
+				<a href="#" class="settings__title js-accordion-control">
+					Comission Reconciliation {{mixins.icon('angle-down', 'settings__arrow')}}
+				</a>
+				<div class="settings__collapse js-accordion-collapse">
+					<div class="settings__box">
+						<div class="settings__item">
+							<div class="settings__label">Callidus Service Enabled</div>
+							<div class="settings__value">
+								<label class="awesome-switcher">
+									<input type="checkbox" checked>
+									<span class="awesome-switcher__content">
+										<span class="awesome-switcher__control"></span>
+									</span>
+								</label>
+							</div>
+						</div>
+						<div class="settings__item">
+							<div class="settings__label">Business Name</div>
+							<div class="settings__value">
+								<input type="text" class="input input_sm is-error" placeholder="Company name">
+								<div class="error-message settings__error-message is-open">Lorem ipsum dolor sit amet.</div>
+							</div>
+						</div>
+						<div class="settings__item">
+							<div class="settings__label">Contact Name</div>
+							<div class="settings__value">
+								<input type="text" class="input input_sm is-error" placeholder="User name">
+								<div class="error-message settings__error-message is-open">Lorem ipsum dolor sit amet.</div>
+							</div>
+						</div>
+						<div class="settings__item">
+							<div class="settings__label">Active</div>
+							<div class="settings__value">
+								{{mixins.checkbox({ attrs: 'checked' })}}
+							</div>
+						</div>
+						<div class="settings__item settings__item_top">
+							<div class="settings__label">Recipients List</div>
+							<div class="settings__value">
+							<textarea class="textarea textarea_sm is-error"></textarea>
+								<div class="error-message settings__error-message is-open">Lorem ipsum dolor sit amet.</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="settings__section js-accordion is-active">
+				<a href="#" class="settings__title js-accordion-control">
+					Callidus Credentials {{mixins.icon('angle-down', 'settings__arrow')}}
+				</a>
+				<div class="settings__collapse js-accordion-collapse">
+					<div class="sm-filters">
+						<div class="sm-filters__col">
+							<div class="sm-dropdown js-dropdown">
+								<button class="btn btn_gray sm-dropdown__btn js-dropdown-control" data-animation="ripple">Select {{mixins.icon('angle-down', 'sm-dropdown__arrow')}}</button>
+								<div class="sm-dropdown__menu">
+									<ul class="sm-dropdown__list">
+										{% for item in [ 'All', 'Not All', 'Some' ] %}
+											<li class="sm-dropdown__item js-dropdown-item">{{item}}</li>
+										{% endfor %}
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="sm-filters__col">
+							<button class="btn btn_gray" data-animation="ripple">Add</button>
+						</div>
+						<div class="sm-filters__col">
+							<button class="btn btn_gray" data-animation="ripple">Remove</button>
+						</div>
+					</div>
+					<div class="settings__main">
+						<div class="settings__content">
+							<div class="table" data-table>
+								<div class="table__thead">
+									<div class="table__tr">
+										<div class="table__td" data-column="market-name" data-sorting>Market Name</div>
+										<div class="table__td" data-column="login" data-sorting="down">Login</div>
+										<div class="table__td" data-column="password">Password</div>
+										<div class="table__td" data-column="active">Active</div>
+										<div class="table__td" data-column="edit">&nbsp;</div>
+									</div>
+								</div>
+								<div class="table__tbody" data-scrollbar>
+									<div class="table__tbody-in" data-table-slider>
+										{% for item in [
+											{
+												store: 'Main Store',
+												username: 'JDoe'
+											},
+											{
+												store: 'Southern Store',
+												username: 'DJohnson'
+											},
+											{
+												store: 'Northern Store',
+												username: 'ADickenson'
+											},
+											{
+												store: 'Eastern Store',
+												username: 'JDavidson'
+											},
+											{
+												store: 'Western Store',
+												username: 'JBrandon'
+											}
+										] %}
+											<div class="table__tr" data-table-row="{{loop.index}}">
+												<div class="table__td" data-column="market-name" data-title="Market Name:">
+													<div class="table__text table__text_static">{{item.marketName or 'South Market'}}</div>
+												</div>
+												<div class="table__td" data-column="login" data-title="Login:">
+													<div class="table__text">{{item.username}}</div>
+													<div class="table__field">
+														<input type="text" class="input input_sm table__input" placeholder="User Name">
+													</div>
+												</div>
+												<div class="table__td" data-column="password" data-title="Password:">
+													<div class="table__text">Pass{{loop.index}}</div>
+													<div class="table__field js-toggle-password">
+														<button class="btn-toggle table__toggle-password js-toggle-password-control">
+															{{mixins.icon('eye-open', 'btn-toggle__visible')}}
+															{{mixins.icon('eye-close', 'btn-toggle__hidden')}}
+														</button>
+														<input type="password" class="input input_sm table__input js-toggle-password-input" placeholder="Password">
+													</div>
+												</div>
+												<div class="table__td" data-column="active" data-title="Active:">
+													{{mixins.checkbox({ classList: 'table__checkbox' })}}
+												</div>
+												<div class="table__td" data-column="edit">
+													<button class="table__btn table__edit" data-table-edit>{{mixins.icon('edit')}}</button>
+													<div class="table__btns">
+														<div class="table__btns-col">
+															<button class="table__btn table__save" data-table-edit>{{mixins.icon('check')}}</button>
+														</div>
+														<div class="table__btns-col">
+															<button class="table__btn table__cancel" data-table-edit>{{mixins.icon('close')}}</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										{% endfor %}
+									</div>
+								</div>
+								<div class="table__caption" data-table-caption></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="alert">
+				<button class="alert__close">
+					{{mixins.icon('close', 'alert__icon')}}
+				</button>
+				<p>
+					<strong>Success!</strong> Settings are successfully saved.
+				</p>
+			</div>
+			<div class="settings__footer">
+				<div class="settings__btn">
+					<button class="btn btn_primary btn_wide" data-animation="ripple" data-modal-control="modal-info">Done</button>
+				</div>
+				<div class="settings__btn">
+					<button class="btn btn_gray btn_wide" data-animation="ripple">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

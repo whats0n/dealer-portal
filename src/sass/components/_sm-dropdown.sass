@@ -1,0 +1,25 @@
+.sm-dropdown
+	position: relative
+	&.is-active
+		.sm-dropdown__menu
+			display: block
+		.sm-dropdown__arrow
+			transform: rotate(180deg)
+	&__menu
+		position: absolute
+		z-index: 100
+		top: 100%
+		left: 0
+		display: none
+		padding: 10px 0
+		margin-top: 15px
+		min-width: 100%
+		background: $white
+		box-shadow: 0 2px 4px rgba(0,0,0,0.2)
+		white-space: nowrap
+	&__item
+		padding: 8px 20px
+		cursor: pointer
+		transition: background 0.3s
+		+hover 
+			background: #eee

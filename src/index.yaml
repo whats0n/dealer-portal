@@ -3,6 +3,7 @@ ProjectTitle: dealer-portal
 PageList:
 - file: main-v2.0.html
 - file: vendor-settings.html
+- file: vendor-settings-2.html
 - file: error.html
 
 - file: main-v2.0-boost.html
