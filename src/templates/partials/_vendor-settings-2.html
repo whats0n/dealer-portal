@@ -52,24 +52,12 @@
 				<a href="#" class="settings__title js-accordion-control">
 					Callidus Credentials {{mixins.icon('angle-down', 'settings__arrow')}}
 				</a>
-				<div class="settings__collapse js-accordion-collapse">
+				<div class="settings__collapse js-accordion-collapse" data-choose>
 					<div class="sm-filters">
 						<div class="sm-filters__col">
 							<div class="sm-dropdown js-dropdown">
-								{#<button class="btn btn_gray sm-dropdown__btn js-dropdown-control" data-animation="ripple">Select {{mixins.icon('angle-down', 'sm-dropdown__arrow')}}</button>#}
-								<div class="btn btn_sm btn_gray sm-dropdown__btn js-dropdown-control" data-animation="ripple">
-									{{mixins.checkbox({ classList: 'sm-dropdown__btn-checkbox' })}}
-									<span class="sm-dropdown__btn-title">Select</span>
-									{{mixins.icon('angle-down', 'sm-dropdown__arrow')}}
-								</div>
-								<div class="sm-dropdown__menu">
-									<ul class="sm-dropdown__list">
-										{% for item in [ 'All', 'Not All', 'Some' ] %}
-											<li class="sm-dropdown__item js-dropdown-item">
-												{{mixins.checkbox({ classList: 'sm-dropdown__item-checkbox', label: item })}}
-											</li>
-										{% endfor %}
-									</ul>
+								<div class="btn btn_sm btn_gray sm-dropdown__btn" data-animation="ripple">
+									{{mixins.checkbox({ classList: 'sm-dropdown__btn-checkbox', attrs: 'data-choose-all', label: 'Select' })}}
 								</div>
 							</div>
 						</div>
@@ -85,6 +73,7 @@
 							<div class="table" data-table>
 								<div class="table__thead">
 									<div class="table__tr">
+										<div class="table__td" data-column="checkbox">&nbsp;</div>
 										<div class="table__td" data-column="market-name" data-sorting>Market Name</div>
 										<div class="table__td" data-column="login" data-sorting="down">Login</div>
 										<div class="table__td" data-column="password">Password</div>
@@ -117,6 +106,9 @@
 											}
 										] %}
 											<div class="table__tr" data-table-row="{{loop.index}}">
+												<div class="table__td" data-column="checkbox" data-title="">
+													{{mixins.checkbox({ classList: 'table__checkbox', attrs: 'data-choose-item' })}}
+												</div>
 												<div class="table__td" data-column="market-name" data-title="Market Name:">
 													<div class="table__text table__text_static">{{item.marketName or 'South Market'}}</div>
 												</div>
