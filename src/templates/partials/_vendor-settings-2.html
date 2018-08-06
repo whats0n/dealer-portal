@@ -56,21 +56,28 @@
 					<div class="sm-filters">
 						<div class="sm-filters__col">
 							<div class="sm-dropdown js-dropdown">
-								<button class="btn btn_gray sm-dropdown__btn js-dropdown-control" data-animation="ripple">Select {{mixins.icon('angle-down', 'sm-dropdown__arrow')}}</button>
+								{#<button class="btn btn_gray sm-dropdown__btn js-dropdown-control" data-animation="ripple">Select {{mixins.icon('angle-down', 'sm-dropdown__arrow')}}</button>#}
+								<div class="btn btn_sm btn_gray sm-dropdown__btn js-dropdown-control" data-animation="ripple">
+									{{mixins.checkbox({ classList: 'sm-dropdown__btn-checkbox' })}}
+									<span class="sm-dropdown__btn-title">Select</span>
+									{{mixins.icon('angle-down', 'sm-dropdown__arrow')}}
+								</div>
 								<div class="sm-dropdown__menu">
 									<ul class="sm-dropdown__list">
 										{% for item in [ 'All', 'Not All', 'Some' ] %}
-											<li class="sm-dropdown__item js-dropdown-item">{{item}}</li>
+											<li class="sm-dropdown__item js-dropdown-item">
+												{{mixins.checkbox({ classList: 'sm-dropdown__item-checkbox', label: item })}}
+											</li>
 										{% endfor %}
 									</ul>
 								</div>
 							</div>
 						</div>
 						<div class="sm-filters__col">
-							<button class="btn btn_gray" data-animation="ripple">Add</button>
+							<button class="btn btn_sm btn_gray" data-animation="ripple">Add</button>
 						</div>
 						<div class="sm-filters__col">
-							<button class="btn btn_gray" data-animation="ripple">Remove</button>
+							<button class="btn btn_sm btn_gray" data-animation="ripple">Remove</button>
 						</div>
 					</div>
 					<div class="settings__main">

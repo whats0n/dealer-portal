@@ -4,18 +4,12 @@ $('.js-dropdown').each((i, container) => {
   container = $(container);
   const control = container.find('.js-dropdown-control');
   const items = container.find('.js-dropdown-item');
-  control.click(e => {
-    e.preventDefault();
-    container.toggleClass(ACTIVE);
-  });
-  items.click(e => {
-    e.preventDefault();
-    container.removeClass(ACTIVE);
+  control.on('click', e => {
+  	container.toggleClass(ACTIVE);
   });
 });
 
-BODY.on('click', e => {
-  e.preventDefault();
+$(document).on('click', e => {
   if ($(e.target).closest('.js-dropdown').length) return;
   $('.js-dropdown').removeClass(ACTIVE);
 });

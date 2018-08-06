@@ -18,8 +18,30 @@
 		box-shadow: 0 2px 4px rgba(0,0,0,0.2)
 		white-space: nowrap
 	&__item
-		padding: 8px 20px
+		padding: 8px 15px
 		cursor: pointer
 		transition: background 0.3s
 		+hover 
 			background: #eee
+		&-checkbox
+			display: block
+			padding: 8px 15px
+			margin: -8px -15px
+			cursor: pointer
+			.checkbox__icon
+				top: 8px
+				left: 15px
+	&__btn
+		&-checkbox,
+		&-title
+			display: inline-block
+			vertical-align: top
+		&-checkbox
+			margin-top: 7px
+	&__arrow
+		display: inline-block
+		vertical-align: top
+		margin-top: 17px
+		fill: currentColor
+		font-size: 60%
+		transition: transform .175s
