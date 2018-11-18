@@ -1,0 +1,57 @@
+<!-- begin item-types -->
+<div class="item-types js-item-types">
+	<div class="item-types__search">
+		{{mixins.icon('search', 'item-types__search-icon')}}
+		<input type="text" class="input input_sm item-types__input js-item-types-input">
+	</div>
+	<ul class="item-types__list">
+		{% for item in [
+			{
+				icon: 'user',
+				title: 'Phones (EMP)'
+			},
+			{
+				icon: 'user',
+				title: 'Accessory Revenue (EMP)'
+			},
+			{
+				icon: 'user',
+				title: 'MRC + (EMP)'
+			},
+			{
+				icon: 'user',
+				title: 'Conversion (EMP)'
+			},
+			{
+				icon: 'home',
+				title: 'PPD (LOC)'
+			},
+			{
+				icon: 'user',
+				title: 'Phones (EMP)'
+			},
+			{
+				icon: 'user',
+				title: 'Accessory Revenue (EMP)'
+			},
+			{
+				icon: 'user',
+				title: 'MRC + (EMP)'
+			},
+			{
+				icon: 'user',
+				title: 'Conversion (EMP)'
+			},
+			{
+				icon: 'home',
+				title: 'PPD (LOC)'
+			}
+		] %}
+			<li class="item-types__item js-item-types-item">
+				{{mixins.icon(item.icon, 'item-types__item-icon')}}
+				{{item.title}}
+			</li>
+		{% endfor %}
+	</ul>
+</div>
+<!-- end item-types -->

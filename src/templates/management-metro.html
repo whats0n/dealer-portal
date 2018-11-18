@@ -1,0 +1,111 @@
+---
+title: POS KPI Management
+headerTitle: 'POS KPI Management'
+theme: 'is-metro'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<div class="container">
+		<div class="inner inner_lg">
+			<div class="settings settings_bordered">
+				<div class="settings__section js-accordion is-active">
+					<a href="#" class="settings__title js-accordion-control">
+						POS KPI Management {{mixins.icon('angle-down', 'settings__arrow')}}
+					</a>
+					<div class="settings__collapse js-accordion-collapse">
+						<div class="settings__info">
+							<p><i>Push anywhere on KPI frame to change it for new KPI</i></p>
+							<p><i>Push 'pen' icon on KPI frame to change KPI title</i></p>
+						</div>
+						<div class="settings__row">
+							<div class="grid-row">
+								{% for item in [
+									{
+										title: 'My Incentives',
+										value: '$500.00',
+										meta: 'Projected Incentives <strong>$1500.00</strong>'
+									},
+									{
+										title: 'Phones (EMP)',
+										value: '34',
+										metas: [
+											'50',
+											'68.00%'
+										]
+									},
+									{
+										title: 'Accessory Revenue',
+										value: '$270.00',
+										metas: [
+											'$500.00',
+											'54.00%'
+										]
+									},
+									{
+										title: 'MRC + (EMP)',
+										value: '$30.00',
+										metas: [
+											'$45.00',
+											'66.67%'
+										]
+									},
+									{
+										title: 'Conversion (EMP)',
+										value: '7.00%',
+										metas: [
+											'10.00%',
+											'70.00%'
+										]
+									},
+									{
+										title: 'PPD (LOC)',
+										value: '145',
+										metas: [
+											'&nbsp;',
+											'&nbsp;'
+										]
+									}
+								] %}
+									<div class="grid-col grid-col_box-item">
+										<div class="box-item js-box-item">
+											<div class="box-item__header">
+												{% if item.icon %}
+													{{mixins.icon(item.icon, 'box-item__icon')}}
+												{% endif %}
+												<div class="box-item__title">
+													<span class="js-box-item-title">{{item.title}}</span>
+													<button class="box-item__edit js-box-item-edit js-box-item-prevent">
+														{{mixins.icon('edit', 'box-item__edit-icon')}}
+													</button>
+												</div>
+												<div class="box-item__field js-box-item-field">
+													<input type="text" class="input input_sm box-item__input js-box-item-input js-box-item-prevent">
+													<button class="box-item__submit js-box-item-submit js-box-item-prevent">
+														{{mixins.icon('check', 'box-item__submit-icon')}}
+													</button>
+												</div>
+											</div>
+											<div class="box-item__value">{{item.value}}</div>
+											<div class="box-item__footer">
+												{% if item.meta %}
+													<div class="box-item__meta">{{item.meta | safe}}</div>
+												{% elif item.metas %}
+													<div class="box-item__row">
+														<div class="box-item__col">Goal: <strong>{{item.metas[0] | safe}}</strong></div>
+														<div class="box-item__col">RTG: <strong>{{item.metas[1] | safe}}</strong></div>
+													</div>
+												{% endif %}
+											</div>
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+							{% include 'partials/modals/_item-types.html' %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

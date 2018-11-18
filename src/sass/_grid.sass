@@ -19,3 +19,14 @@
 // 		&_sm-#{$i}
 // 			+sm 
 // 				width: $i+%
+
+.grid
+	&-row
+		display: flex
+		flex-wrap: wrap
+		margin: -10px
+	&-col
+		padding: 10px
+		&_box-item
+			flex: 1 1 33.33%
+			max-width: 100%
