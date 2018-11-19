@@ -15,10 +15,21 @@ $('.js-box-item').each((i, container) => {
   container.click(e => {
     if ($(e.target).closest('.js-box-item-prevent').length) return;
     types.addClass(OPEN);
+    const containerTop = container.offset().top;
+    const containerLeft = container.offset().left;
+    const containerWidth = container.outerWidth();
+    types.css({
+      top: `${containerTop}px`,
+      left: `${containerLeft + containerWidth/2}px`
+    });
+    setTimeout(() => {
+      types
+        .find('.js-item-types-input')
+        .focus();
+    }, 300);
   });
 
   edit.click(e => {
-    console.log('edit');
     e.preventDefault();
     input.val(title.text());
     container.addClass(EDIT);
@@ -48,10 +59,18 @@ types.each((i, container) => {
         .text()
         .toLowerCase()
         .includes(val.toLowerCase())
-      ) return;
-      item.addClass(HIDDEN);
+      ) {
+        item.removeClass(HIDDEN);
+      } else {
+        item.addClass(HIDDEN);
+      }
     });
   });
 
   items.click(e => container.removeClass(OPEN));
+});
+
+$(document).on('click', e => {
+  if ($(e.target).closest('.js-item-types').length || $(e.target).closest('.js-box-item').length || !types.hasClass(OPEN)) return;
+  types.removeClass(OPEN);
 });

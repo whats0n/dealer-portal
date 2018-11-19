@@ -29,6 +29,7 @@ theme: 'is-metro'
 									{
 										title: 'Phones (EMP)',
 										value: '34',
+										icon: 'user',
 										metas: [
 											'50',
 											'68.00%'
@@ -37,6 +38,7 @@ theme: 'is-metro'
 									{
 										title: 'Accessory Revenue',
 										value: '$270.00',
+										icon: 'user',
 										metas: [
 											'$500.00',
 											'54.00%'
@@ -45,6 +47,7 @@ theme: 'is-metro'
 									{
 										title: 'MRC + (EMP)',
 										value: '$30.00',
+										icon: 'user',
 										metas: [
 											'$45.00',
 											'66.67%'
@@ -53,6 +56,7 @@ theme: 'is-metro'
 									{
 										title: 'Conversion (EMP)',
 										value: '7.00%',
+										icon: 'user',
 										metas: [
 											'10.00%',
 											'70.00%'
@@ -61,6 +65,7 @@ theme: 'is-metro'
 									{
 										title: 'PPD (LOC)',
 										value: '145',
+										icon: 'home',
 										metas: [
 											'&nbsp;',
 											'&nbsp;'
@@ -101,11 +106,11 @@ theme: 'is-metro'
 									</div>
 								{% endfor %}
 							</div>
-							{% include 'partials/modals/_item-types.html' %}
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	{% include 'partials/modals/_item-types.html' %}
 {% endblock %}
