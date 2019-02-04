@@ -11,6 +11,87 @@ theme: 'is-metro'
 			<div class="settings settings_bordered">
 				<div class="settings__section js-accordion is-active">
 					<a href="#" class="settings__title js-accordion-control">
+						Company Details {{mixins.icon('angle-down', 'settings__arrow')}}
+					</a>
+					<div class="settings__collapse js-accordion-collapse">
+						<div class="l-container">
+							<div class="l-row">
+								<div class="l-col l-col_50">
+									{{mixins.group({
+										id: 'display-name',
+										label: 'Display Name',
+										input: { classList: 'input_sm' }
+									})}}
+								</div>
+								<div class="l-col l-col_50">
+									{{mixins.group({
+										id: 'full-name',
+										label: 'Full Name',
+										input: { classList: 'input_sm' }
+									})}}
+								</div>
+							</div>
+							<div class="l-row">
+								<div class="l-col l-col_50">
+									{{mixins.group({
+										id: 'address-1',
+										label: 'Address 1',
+										input: { classList: 'input_sm' }
+									})}}
+								</div>
+								<div class="l-col l-col_50">
+									{{mixins.group({
+										id: 'address-2',
+										label: 'Address 2',
+										input: { classList: 'input_sm' }
+									})}}
+								</div>
+							</div>
+							<div class="l-row">
+								<div class="l-col l-col_50">
+									<div class="l-row">
+										<div class="l-col l-col_50 l-col_md-50">
+											{{mixins.group({
+												id: 'country',
+												label: 'Country',
+												input: { classList: 'input_sm' }
+											})}}
+										</div>
+										<div class="l-col l-col_50 l-col_md-50">
+											{{mixins.group({
+												id: 'state',
+												label: 'State',
+												select: {
+													options: [ 'option 1', 'option 2', 'option 3' ]
+												}
+											})}}
+										</div>
+									</div>
+								</div>
+								<div class="l-col l-col_50">
+									<div class="l-row">
+										<div class="l-col l-col_50 l-col_md-50">
+											{{mixins.group({
+												id: 'zip',
+												label: 'Zip',
+												input: { classList: 'input_sm' }
+											})}}
+										</div>
+										<div class="l-col l-col_50 l-col_md-50">
+											{{mixins.group({
+												id: 'city',
+												label: 'City',
+												input: { classList: 'input_sm' }
+											})}}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="settings__section js-accordion is-active">
+					<a href="#" class="settings__title js-accordion-control">
 						POS KPI Management {{mixins.icon('angle-down', 'settings__arrow')}}
 					</a>
 					<div class="settings__collapse js-accordion-collapse">
